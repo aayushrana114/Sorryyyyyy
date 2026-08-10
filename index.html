@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tanu ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;font-family:Georgia,serif;background:linear-gradient(135deg,#ffd6e0,#ff9eb5);color:#54202d}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;transition:.7s}
+.hidden{display:none}
+.card{width:min(92%,650px);text-align:center;background:#fffffff0;padding:42px 30px;border-radius:30px;box-shadow:0 20px 65px #80354a44;animation:appear .8s ease}
+.heart{font-size:65px;animation:beat 1.1s infinite}
+h1{font-size:clamp(42px,9vw,62px);color:#d52f5a;margin:10px 0}
+h2{font-weight:normal}
+p{font-size:18px;line-height:1.75}
+button{margin-top:22px;border:0;background:#d52f5a;color:white;border-radius:50px;padding:16px 30px;font-size:17px;font-weight:bold;cursor:pointer;box-shadow:0 8px 20px #d52f5a55}
+button:hover{transform:scale(1.05)}
+.box{background:#fff0f4;border-left:4px solid #d52f5a;border-radius:15px;padding:20px;text-align:left;line-height:1.7}
+.promise{margin-top:18px;background:#ffe0e8;padding:20px;border-radius:18px;line-height:1.7}
+#secret{display:none;color:#d52f5a;font-size:21px;font-weight:bold;margin-top:20px}
+.float{position:fixed;bottom:-40px;font-size:25px;animation:rise 7s linear infinite;opacity:.7;z-index:0}
+@keyframes rise{to{transform:translateY(-115vh) rotate(20deg);opacity:0}}
+@keyframes beat{50%{transform:scale(1.15)}}
+@keyframes appear{from{opacity:0;transform:scale(.94) translateY(20px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="float" style="left:8%">❤️</div>
+<div class="float" style="left:25%;animation-delay:2s">💗</div>
+<div class="float" style="left:48%;animation-delay:4s">💕</div>
+<div class="float" style="left:70%;animation-delay:1s">💖</div>
+<div class="float" style="left:88%;animation-delay:3s">❤️</div>
+
+<section id="page1" class="page">
+<div class="card">
+<div class="heart">❤️</div>
+<h1>Hey Tanu...</h1>
+<h2>I made something special for you.</h2>
+<p>There is something I really want to tell you, from my heart.</p>
+<button onclick="openSorry()">Open This For Me 💌</button>
+</div>
+</section>
+
+<section id="page2" class="page hidden">
+<div class="card">
+<div class="heart">❤️</div>
+<h1>I'm Sorry, Tanu</h1>
+<p>Tanu Jotshi, I know I made a mistake, and I genuinely regret hurting you.</p>
+
+<div class="box">
+I don't want to make excuses or expect a simple “sorry” to fix everything.
+I just want you to know that I understand that I hurt you, and I'm truly sorry.
+You mean a lot to me, and the last thing I ever want is to make you feel hurt because of me.
+</div>
+
+<div class="promise">
+<strong>My promise to you ❤️</strong><br><br>
+I will learn from my mistake. I will listen better, understand your feelings,
+and be more careful with my actions. Most importantly,
+<strong>I won't do it again.</strong><br><br>
+I can't change what happened, but I can make sure I don't repeat it.
+</div>
+
+<p>I don't expect you to forget everything immediately.
+I just hope you can forgive me when you're ready.</p>
+
+<button onclick="showSecret()">One Last Thing 💗</button>
+
+<div id="secret">
+I'm really sorry, Tanu. ❤️<br>
+I never want to lose your smile.
+</div>
+
+<p style="margin-top:25px">With all my heart,<br><strong>Yours ❤️</strong></p>
+</div>
+</section>
+
+<script>
+function openSorry(){
+ document.getElementById("page1").classList.add("hidden");
+ document.getElementById("page2").classList.remove("hidden");
+}
+function showSecret(){
+ document.getElementById("secret").style.display="block";
+ for(let i=0;i<15;i++){
+  const h=document.createElement("div");
+  h.textContent=["❤️","💗","💕","💖"][Math.floor(Math.random()*4)];
+  h.style.position="fixed";
+  h.style.left=Math.random()*100+"vw";
+  h.style.bottom="-30px";
+  h.style.fontSize=20+Math.random()*25+"px";
+  h.style.zIndex=10;
+  h.style.animation="rise 4s linear forwards";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),4000);
+ }
+}
+</script>
+</body>
+</html>
